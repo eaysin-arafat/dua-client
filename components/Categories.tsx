@@ -61,7 +61,9 @@ const Categories = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="text-base font-medium">Dua's Importance</h3>
+                    <h3 className="text-base font-medium">
+                      Dua&apos;s Importance
+                    </h3>
                     <p className="text-sm">Subcategory: 7</p>
                   </div>
                 </div>
@@ -77,7 +79,6 @@ const Categories = () => {
                   {[4, 4, 4, 4, 4, 4, 4, 4, 44].map((item, index) => (
                     <>
                       <p
-                        key={index}
                         className="px-3 text-base font-medium cursor-pointer"
                         onClick={() => toggleSubCategoryDropdown(index)}
                       >
@@ -95,7 +96,7 @@ const Categories = () => {
                             >
                               <PiArrowBendDownRightThin size={24} />
                               <p className="text-sm font-medium">
-                                Allah's guidance #{index + 1}
+                                Allah&apos;s guidance #{index + 1}
                               </p>
                             </div>
                           ))}

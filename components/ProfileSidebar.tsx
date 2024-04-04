@@ -6,7 +6,10 @@ const ProfileSidebar = () => {
   return (
     <div className="absolute top-[90px] py-5 px-3 bg-bgWhiteColor space-y-2 rounded-md">
       {[5, 5, 5, 5, 5].map((item) => (
-        <p className="flex  items-center justify-start gap-2 whitespace-nowrap text-sm">
+        <p
+          key={item}
+          className="flex  items-center justify-start gap-2 whitespace-nowrap text-sm"
+        >
           <BiDownload className="text-primaryColor" /> Download Dua App
         </p>
       ))}

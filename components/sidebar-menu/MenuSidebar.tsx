@@ -15,8 +15,11 @@ const MenuSidebar = () => {
           <Image src={duaIcon} alt="Dua icon" height={40} width={40} />
         </div>
         <div className="flex flex-col gap-5">
-          {sidebarMenu?.map((menu) => (
-            <span className="bg-bgGrayColor text-textGrayColor p-1 rounded-full">
+          {sidebarMenu?.map((menu, index) => (
+            <span
+              key={index}
+              className="bg-bgGrayColor text-textGrayColor p-1 rounded-full"
+            >
               {menu}
             </span>
           ))}

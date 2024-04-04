@@ -22,10 +22,10 @@ export default function Home() {
       setShowCategories(false);
     }
 
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         categoriesRef.current &&
-        !categoriesRef.current.contains(event.target)
+        !(categoriesRef.current as Node).contains(event.target as Node)
       ) {
         setShowCategories(false);
       }

@@ -22,7 +22,10 @@ const Dua = () => {
 
         <div className="space-y-5">
           {[5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4].map((item) => (
-            <main className="bg-bgWhiteColor px-5 py-5 flex flex-col gap-4 rounded-md">
+            <main
+              key={item}
+              className="bg-bgWhiteColor px-5 py-5 flex flex-col gap-4 rounded-md"
+            >
               <div className="flex items-center gap-2">
                 <Image height={40} width={40} src={cardIcon} alt="allah" />
                 <h2 className="cardTitle">
@@ -52,9 +55,10 @@ const Dua = () => {
                 <h2 className="cardTitle inline">Transliteration: &nbsp;</h2>
                 <p className="inline italic">
                   Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa
-                  lahul-hamdu wa huwa 'alaa kulli shay'in qadir. Allaahumma laa
-                  maani'a limaa a'taita wa laa mu'tia limaa mana'ta wa laa
-                  yanfa'u dhal-jaddi minka al-jaddu
+                  lahul-hamdu wa huwa &apos;alaa kulli shay&apos;in qadir.
+                  Allaahumma laa maani&apos;a limaa a&apos;taita wa laa
+                  mu&apos;tia limaa mana&apos;ta wa laa yanfa&apos;u dhal-jaddi
+                  minka al-jaddu
                 </p>
               </div>
 
