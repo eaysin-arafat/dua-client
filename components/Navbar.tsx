@@ -1,21 +1,62 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { CgProfile } from "react-icons/cg";
 import { HiSearch } from "react-icons/hi";
+import { MdKeyboardArrowLeft, MdOutlineArrowDropDown } from "react-icons/md";
+import ProfileSidebar from "./ProfileSidebar";
+import { RiSettings5Fill } from "react-icons/ri";
+import DuaIcon from "./shared/DuaIcon";
 
-const Navbar = () => {
+const Navbar = ({
+  title,
+  isHome = false,
+}: {
+  title: string;
+  isHome?: boolean;
+}) => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="flex justify-between">
-      <h1 className="text-textColor text-2xl font-bold ">Dua Page</h1>
-
-      <div className="relative">
-        <input
-          type="search"
-          placeholder="Search by Dua Name"
-          className="py-2 px-3 pr-4 block w-[300px] rounded-md border shadow-sm sm:text-sm"
-        />
-        <div className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center bg-bgGrayColor m-1 rounded-sm pointer-events-none">
-          <HiSearch className="h-5 w-5 flex items-center justify-center ml-3 text-gray-400 " />
+    <div className="grid grid-cols-10 items-center justify-center mt-1.5">
+      <h1
+        className={`flex items-center justify-start gap-2 xl:gap-0 text-textGrayColor md:text-textColor text-2xl mt-3 col-span-7 md:col-span-4 xl:col-span-7 whitespace-nowrap ${
+          !isHome && "col-span-full"
+        }`}
+      >
+        <MdKeyboardArrowLeft size={34} className="inline md:hidden" />
+        <div className="block xl:hidden">
+          <DuaIcon />
         </div>
-      </div>
+        {title}
+      </h1>
+
+      {isHome && (
+        <>
+          <div className="relative col-span-6 md:col-span-4 lg:col-span-1 mt-1.5 hidden md:flex justify-end mr-5 lg:ml-36">
+            <input
+              type="search"
+              placeholder="Search by Dua Name"
+              className="py-3 px-3 pr-4 block w-[300px] rounded-md border sm:text-sm focus:border focus:border-primaryColor focus:outline-none"
+            />
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center bg-bgGrayColor m-1 rounded-sm pointer-events-none">
+              <HiSearch className="h-5 w-5 flex items-center justify-center ml-3 text-gray-400 " />
+            </div>
+          </div>
+          <div className="col-span-3 md:col-span-1 2xl:hidden flex items-center justify-end ">
+            <RiSettings5Fill size={24} className="text-primaryColor" />
+          </div>
+          <div
+            className="col-span-2 md:col-span-1 2xl:col-span-2 hidden md:flex items-center justify-end cursor-pointer"
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            <CgProfile className="text-textGrayColor" size={24} />
+            <MdOutlineArrowDropDown size={24} className="text-textGrayColor" />
+
+            {open && <ProfileSidebar />}
+          </div>{" "}
+        </>
+      )}
     </div>
   );
 };

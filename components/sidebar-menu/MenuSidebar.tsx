@@ -4,24 +4,21 @@ import { TbHandStop } from "react-icons/tb";
 import { IoHandLeftOutline } from "react-icons/io5";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { HiMiniHandRaised } from "react-icons/hi2";
+import Image from "next/image";
+import duaIcon from "../../app/favicon.png";
 
 const MenuSidebar = () => {
   return (
     <header className="flex flex-row justify-between h-fit">
-      <main className="flex flex-col justify-center items-center space-y-16 bg-bgWhiteColor rounded-xl px-2 py-5">
-        <div className="flex items-center justify-center bg-primaryColor px-1 py-2 rounded-lg">
-          <HiMiniHandRaised
-            size={20}
-            className="translate-x-[2px] text-bgWhiteColor"
-          />
-          <HiMiniHandRaised
-            size={20}
-            className="translate-x-[-2px] text-bgWhiteColor"
-          />
+      <main className="flex flex-col justify-center items-center space-y-16 bg-bgWhiteColor rounded-3xl px-5 py-6">
+        <div className="flex items-center justify-center bg-primaryColor px-1 py-1 rounded-lg">
+          <Image src={duaIcon} alt="Dua icon" height={40} width={40} />
         </div>
         <div className="flex flex-col gap-5">
           {sidebarMenu?.map((menu) => (
-            <span className="bg-bgColor p-1 rounded-full">{menu}</span>
+            <span className="bg-bgGrayColor text-textGrayColor p-1 rounded-full">
+              {menu}
+            </span>
           ))}
         </div>
 

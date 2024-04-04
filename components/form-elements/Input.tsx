@@ -13,7 +13,7 @@ const Input = ({
       <input
         type="search"
         placeholder="Search by Dua Name"
-        className="py-2 px-3 pr-4 block w-full rounded-md border shadow-sm sm:text-sm"
+        className="py-3 px-3 pr-4 block w-full rounded-md border shadow-sm sm:text-sm outline-none focus:border focus:border-primaryColor"
       />
       {isIcon && (
         <div className="absolute inset-y-0 right-0 pr-3 flex items-center justify-center bg-bgGrayColor m-1 rounded-sm pointer-events-none">

@@ -13,14 +13,14 @@ import cardIcon from "../public/card-icon.png";
 
 const Dua = () => {
   return (
-    <section className="pl-5 rounded-md">
+    <section className="rounded-md bg-bgGrayColor">
       <div className="max-h-[calc(100vh-100px)] overflow-auto">
         <div className="flex items-center bg-bgWhiteColor px-5 py-5 rounded-md mb-3 rounded-tr-none">
           <h2 className="cardTitle">Section: &nbsp;</h2>
           <p>The servant is dependent on his Lord</p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-5">
           {[5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4].map((item) => (
             <main className="bg-bgWhiteColor px-5 py-5 flex flex-col gap-4 rounded-md">
               <div className="flex items-center gap-2">
@@ -75,7 +75,7 @@ const Dua = () => {
                 <p> Bukhari: 844</p>
               </div>
 
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <FaPlayCircle className="text-primaryColor" size={35} />
 
                 <div className="flex gap-6 text-textGrayColor">
